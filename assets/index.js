@@ -15,16 +15,7 @@ function addTeamMember () {
             name: 'addTeamMember',
         }
     ])
-    .then(data => {
-        switch(data.addTeamMember) {
-            case 'Yes':
-                newTeamMember();
-                break;
-            case 'No':
-                fs.writeFileSync('index.html',generateTeam(team),err => err ? console.log(err):console.log('HTML Created'))
-                break;
-        }
-    })
+
 }
 
 
