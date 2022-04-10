@@ -73,13 +73,13 @@ function newManager() {
             },
             {
                 type: 'number',
-                name: 'officenumber',
+                name: 'office',
                 message: 'What is their officee number?'
             },
         ])
         .then((response) => {
             console.log(response)
-            const manager = new Manager(response.name, response.id, response.email, response.officenumber)
+            const manager = new Manager(response.name, response.id, response.email, response.office)
             employeeTeam.push(manager);
             console.log("Added new Manager");
             addTeamMember();
@@ -112,7 +112,7 @@ function newEngineer() {
         ])
         .then((response) => {
             console.log(response)
-            const manager = new Engineer (response.name, response.id, response.email, response.github)
+            const engineer = new Engineer (response.name, response.id, response.email, response.github)
             employeeTeam.push(engineer);
             console.log("Added new Manager");
             addTeamMember();
@@ -139,14 +139,14 @@ function newIntern() {
             },
             {
                 type: 'number',
-                name: 'officenumber',
+                name: 'office',
                 message: 'What is their officee number?'
             },
         ])
         .then((response) => {
             console.log(response)
-            const manager = new Intern(response.name, response.id, response.email, response.officenumber)
-            employeeTeam.push(manager);
+            const intern = new Intern(response.name, response.id, response.email, response.office)
+            employeeTeam.push(intern);
             console.log("Added new Manager");
             addTeamMember();
         })
