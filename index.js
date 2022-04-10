@@ -1,10 +1,12 @@
-// Global Varibles 
+// Packages needed for app
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
 const buildTeam = require('./dist/generateHtml');
+
+// Array to place employees created by user
 const employeeTeam = [];
 
 function addTeamMember() {
@@ -90,7 +92,7 @@ function newEngineer() {
             {
                 type: 'input',
                 name: 'name',
-                message: 'What is the managers name?'
+                message: 'What is the engineers name?'
             },
             {
                 type: 'number',
@@ -100,18 +102,18 @@ function newEngineer() {
             {
                 type: 'input',
                 name: 'email',
-                message: 'What is the managers email?'
+                message: 'What is the engineers email?'
             },
             {
                 type: 'number',
-                name: 'officenumber',
-                message: 'What is their officee number?'
+                name: 'github',
+                message: 'What is the engineers github?'
             },
         ])
         .then((response) => {
             console.log(response)
-            const manager = new Manager(response.name, response.id, response.email, response.officenumber)
-            employeeTeam.push(manager);
+            const manager = new Engineer (response.name, response.id, response.email, response.github)
+            employeeTeam.push(engineer);
             console.log("Added new Manager");
             addTeamMember();
         })
@@ -123,7 +125,7 @@ function newIntern() {
             {
                 type: 'input',
                 name: 'name',
-                message: 'What is the managers name?'
+                message: 'What is the interns name?'
             },
             {
                 type: 'number',
@@ -143,7 +145,7 @@ function newIntern() {
         ])
         .then((response) => {
             console.log(response)
-            const manager = new Manager(response.name, response.id, response.email, response.officenumber)
+            const manager = new Intern(response.name, response.id, response.email, response.officenumber)
             employeeTeam.push(manager);
             console.log("Added new Manager");
             addTeamMember();

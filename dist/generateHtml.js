@@ -9,7 +9,12 @@ function generateHtml ( team ) {
     </head>
     <body>
         <h1>Hello</h1>
-        
+       ${team.map(employee =>{
+           //return "new"
+           if ( employee.getRole() === "Manager"){
+               return `<h1>manager</h1>`
+           }
+       }).join("")}
     </body>
     <script src="index.js"></script>
     </html>`
