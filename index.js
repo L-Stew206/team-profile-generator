@@ -105,7 +105,7 @@ function newEngineer() {
                 message: 'What is the engineers email?'
             },
             {
-                type: 'number',
+                type: 'input',
                 name: 'github',
                 message: 'What is the engineers github?'
             },
@@ -138,14 +138,14 @@ function newIntern() {
                 message: 'What is the managers email?'
             },
             {
-                type: 'number',
-                name: 'office',
-                message: 'What is their officee number?'
+                type: 'input',
+                name: 'school',
+                message: 'What is their school?'
             },
         ])
         .then((response) => {
             console.log(response)
-            const intern = new Intern(response.name, response.id, response.email, response.office)
+            const intern = new Intern(response.name, response.id, response.email, response.school)
             employeeTeam.push(intern);
             console.log("Added new Manager");
             addTeamMember();
